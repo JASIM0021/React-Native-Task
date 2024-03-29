@@ -1,12 +1,32 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
-
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { SafeAreaView, StyleSheet, Text, View } from 'react-native';
+import 'react-native-gesture-handler';
+import MyTabs from './navigations/Tabs/MyTabs';
+import SettingScreen from './screen/TaskScreen';
+import ImageTask from './screen/task/ImageTask';
+import TaskManager from './screen/task/TaskManager';
 export default function App() {
+  const Stack = createNativeStackNavigator ();
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+   <NavigationContainer>
+ 
+    <Stack.Navigator 
+   
+    >
+      <Stack.Screen name='Home' options={{
+        headerShown:false
+      }}  component={MyTabs}/>
+      <Stack.Screen name='Setting' component={SettingScreen}  
+      
+      
+      />
+      <Stack.Screen name='imageTask' component={ImageTask}/>
+      <Stack.Screen name='localStorge' component={TaskManager}/>
+
+    </Stack.Navigator>
+ 
+   </NavigationContainer>
   );
 }
 
