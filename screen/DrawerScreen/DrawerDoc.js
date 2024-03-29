@@ -4,7 +4,7 @@ import React from 'react'
 const DrawerDoc = () => {
   return (
     <View style={styles.container}>
-      <Text style={styles.text}>This is Drawer initial screen {"\n"} swipe left to right or click the top right icon to open drawer</Text>
+      <Text style={styles.text}>This is Drawer initial screen {"\n"} swipe left to right or click the top Left icon to open drawer</Text>
     </View>
   )
 }
